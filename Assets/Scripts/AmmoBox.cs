@@ -9,7 +9,7 @@ public class AmmoBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(ammo, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        spawnAmmo();
     }
 
     // Update is called once per frame
@@ -18,12 +18,22 @@ public class AmmoBox : MonoBehaviour
         
     }
 
-
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag != "Ammo")
+        if (other.gameObject.tag == "Ammo")
         {
-            Instantiate(ammo, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+            spawnAmmo();
         }
+    }
+
+    private void AmmoBox_actionDestroy()
+    {
+        spawnAmmo();
+    }
+
+    private void spawnAmmo()
+    {
+        GameObject bullet = Instantiate(ammo, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), Quaternion.identity);
+        bullet.GetComponent<Ammo>().actionDestroy += AmmoBox_actionDestroy;
     }
 }
