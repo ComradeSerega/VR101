@@ -6,16 +6,18 @@ using UnityEngine.UI;
 public class Shotgun : MonoBehaviour
 {
     public int damage = 40;
-    public float shotRange = 1000;
     public int ammoMax = 5;
     public int ammoCurrent = 0;
+    public bool readyToShot = false;
+    public float shotRange = 1000;
     private float timeShot;
 
     public GameObject shotFlash;
     public GameObject reloadItem;
     public GameObject down;
 
-    public Animator animator;
+    public Animator animatorRE;
+    public Animator animatorPress;
 
     public AudioClip shotSound;
     public AudioClip shotgunReload;
@@ -36,17 +38,24 @@ public class Shotgun : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(ammoCurrent > 0)
+        if(ammoCurrent > 0 && readyToShot)
         {
             if (shoot())
             {
+                animatorPress.SetBool("Press", true);
                 ammoCurrent -= 1;
-                animator.SetBool("Check", true);
+                readyToShot = false;
             }
             
         }
 
         ammo.text = "" + ammoCurrent;
+
+        if (Input.GetButton("Fire2") && !readyToShot && ammoCurrent > 0)
+        {
+            readyToShot = true;
+            animatorRE.SetBool("Check", true);
+        }
     }
 
     void rayCastShoot()
