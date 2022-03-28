@@ -17,7 +17,6 @@ public class Shotgun : MonoBehaviour
     public GameObject down;
 
     public Animator animatorRE;
-    public Animator animatorPress;
 
     public AudioClip shotSound;
     public AudioClip shotgunReload;
@@ -42,7 +41,6 @@ public class Shotgun : MonoBehaviour
         {
             if (shoot())
             {
-                animatorPress.SetBool("Press", true);
                 ammoCurrent -= 1;
                 readyToShot = false;
             }
