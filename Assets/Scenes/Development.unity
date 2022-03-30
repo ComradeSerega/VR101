@@ -426,7 +426,6 @@ MonoBehaviour:
   shotRange: 1000
   shotFlash: {fileID: 0}
   reloadItem: {fileID: 1716914172}
-  down: {fileID: 0}
   animatorRE: {fileID: 1716914173}
   shotSound: {fileID: 8300000, guid: 09c0a13fb22937d408f425bee41b4357, type: 3}
   shotgunReload: {fileID: 8300000, guid: 64eafb517910a36488e5ad25773f874b, type: 3}
@@ -632,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd5f5713d08f5e45b9d9b881ee75ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 4147424371615634247, guid: 716eafcfc115584498a32a962e3e0db5, type: 3}
+  ammo: {fileID: 8514967043362058060, guid: 0b6bae02c9f04584d9bea855a392c628, type: 3}
 --- !u!54 &1283824593
 Rigidbody:
   m_ObjectHideFlags: 0

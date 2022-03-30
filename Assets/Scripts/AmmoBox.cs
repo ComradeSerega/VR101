@@ -33,7 +33,7 @@ public class AmmoBox : MonoBehaviour
 
     private void spawnAmmo()
     {
-        GameObject bullet = Instantiate(ammo, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z-1), Quaternion.identity);
+        GameObject bullet = Instantiate(ammo, new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z), Quaternion.identity);
         bullet.GetComponent<Ammo>().actionDestroy += AmmoBox_actionDestroy;
     }
 }

@@ -14,7 +14,6 @@ public class Shotgun : MonoBehaviour
 
     public GameObject shotFlash;
     public GameObject reloadItem;
-    public GameObject down;
 
     public Animator animatorRE;
 
