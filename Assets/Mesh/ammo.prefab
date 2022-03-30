@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 9034482287155131894}
   - component: {fileID: 5390586999323212371}
   - component: {fileID: 7866593488650849945}
-  m_Layer: 0
+  - component: {fileID: -7538895973587456555}
+  m_Layer: 8
   m_Name: ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,3 +80,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-7538895973587456555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514967043362058060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []

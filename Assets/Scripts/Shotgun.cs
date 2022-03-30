@@ -11,9 +11,11 @@ public class Shotgun : MonoBehaviour
     public bool readyToShot = false;
     public float shotRange = 1000;
     private float timeShot;
+    public int deerKilled = 0;
 
     public GameObject shotFlash;
     public GameObject reloadItem;
+    public GameObject target;
 
     public Animator animatorRE;
 
@@ -63,7 +65,14 @@ public class Shotgun : MonoBehaviour
 
         if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, shotRange))
         {
-            Debug.Log("shooting " + hit.collider);
+            //Debug.Log("shooting " + hit.collider.name);
+            if(hit.collider.name == target.name)
+            {
+                deerKilled += 1;
+                Debug.Log("deer " + deerKilled);
+                //target.transform.position = transform.forward * 0;
+                target.transform.position = new Vector3(0, 0, 0);
+            }
         }
     }
 

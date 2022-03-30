@@ -421,11 +421,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 40
   ammoMax: 5
-  ammoCurrent: 0
+  ammoCurrent: 5
   readyToShot: 0
   shotRange: 1000
+  deerKilled: 0
   shotFlash: {fileID: 0}
   reloadItem: {fileID: 1716914172}
+  target: {fileID: 115804226}
   animatorRE: {fileID: 1716914173}
   shotSound: {fileID: 8300000, guid: 09c0a13fb22937d408f425bee41b4357, type: 3}
   shotgunReload: {fileID: 8300000, guid: 64eafb517910a36488e5ad25773f874b, type: 3}
