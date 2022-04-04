@@ -111,7 +111,7 @@ public class Shotgun : MonoBehaviour
     public bool checkFire2()
     {
         //if (Input.GetButton("Fire2"))
-        if (OVRInput.GetDown(OVRInput.Button.Two))
+        if (OVRInput.GetDown(OVRInput.Button.One))
         {
             return true;
         }
