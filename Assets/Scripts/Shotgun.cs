@@ -26,7 +26,7 @@ public class Shotgun : MonoBehaviour
     public Text ammo;
     public Text deers;
 
-    public Camera camera;
+    public GameObject camera;
 
     void Start()
     {
@@ -44,6 +44,7 @@ public class Shotgun : MonoBehaviour
         {
             if (shoot())
             {
+                Debug.Log("ShoootedEnd");
                 ammoCurrent -= 1;
                 readyToShot = false;
             }
@@ -66,9 +67,9 @@ public class Shotgun : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, shotRange))
+        if (Physics.Raycast(camera.transform.position, camera.transform.right, out hit, shotRange))
         {
-            if(hit.collider.name == target.name)
+            if(hit.collider.name.StartsWith(target.name))
             {
                 deerKilled += 1;
                 //Debug.Log("deer " + deerKilled);
@@ -80,8 +81,9 @@ public class Shotgun : MonoBehaviour
 
     bool shoot()
     {
-        if (checkFire1() && ((timeShot += Time.deltaTime) > 0.2))
+        if (checkFire1() && ((timeShot += Time.deltaTime) > 0.05))
         {
+            Debug.Log("Shoooted");
             timeShot = 0.0f;
             rayCastShoot();
 
@@ -100,9 +102,11 @@ public class Shotgun : MonoBehaviour
 
     public bool checkFire1()
     {
+        Debug.Log("ButtonChecked1");
         //if (Input.GetButton("Fire1"))
-        if (OVRInput.GetDown(OVRInput.Button.Two))
+        if (Input.GetButtonDown("Fire1"))
         {
+            Debug.Log("ButtonCheckedTrue1");
             return true;
         }
         else return false;
@@ -111,7 +115,7 @@ public class Shotgun : MonoBehaviour
     public bool checkFire2()
     {
         //if (Input.GetButton("Fire2"))
-        if (OVRInput.GetDown(OVRInput.Button.One))
+        if (Input.GetButtonDown("Fire2"))
         {
             return true;
         }

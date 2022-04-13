@@ -18,7 +18,7 @@ public class AmmoBox : MonoBehaviour
         
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerLeave(Collider other)
     {
         if (other.gameObject.tag == "Ammo")
         {
